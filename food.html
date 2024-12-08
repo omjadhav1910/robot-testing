@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delight</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 15px 20px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+        .food-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .food-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .food-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .food-item:last-child {
+            border-bottom: none;
+        }
+        .food-item label {
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #addToCartButton {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #addToCartButton:hover {
+            background: #eb6a50;
+        }
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: none;
+            width: 300px;
+            text-align: center;
+        }
+        #popup h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #ff7e5f;
+        }
+        #popup p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        #popup button {
+            padding: 10px 20px;
+            background: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #popup button:hover {
+            background: #eb6a50;
+        }
+    </style>
+</head>
+<body>
+    <header>Food Delight - Your Favorites, Delivered</header>
+    <div class="food-container">
+        <h2>Select Your Food</h2>
+        <div class="food-item">
+            <label for="pizza">Pizza</label>
+            <input type="checkbox" id="pizza" value="Pizza" />
+        </div>
+        <div class="food-item">
+            <label for="burger">Burger</label>
+            <input type="checkbox" id="burger" value="Burger" />
+        </div>
+        <div class="food-item">
+            <label for="pasta">Pasta</label>
+            <input type="checkbox" id="pasta" value="Pasta" />
+        </div>
+        <button id="addToCartButton" onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div id="popup">
+        <h3>Items Added!</h3>
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()">Continue</button>
+    </div>
+
+    <script>
+        function addToCart() {
+            const selectedItems = [];
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            checkboxes.forEach((checkbox) => {
+                selectedItems.push(checkbox.value);
+            });
+
+            if (selectedItems.length === 0) {
+                alert('Please select at least one item!');
+                return;
+            }
+
+            const popup = document.getElementById('popup');
+            const popupMessage = document.getElementById('popupMessage');
+            popupMessage.textContent = `You added: ${selectedItems.join(', ')}`;
+            popup.style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
