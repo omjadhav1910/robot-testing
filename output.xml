@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2024-12-08T21:37:00.793481" rpa="false" schemaversion="5">
+<suite id="s1" name="Food" source="/Users/omjadhav/robot-testing /food.robot">
+<test id="s1-t1" name="Test Food Selection and Add to Cart" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:00.874231" level="INFO">Opening browser 'Chrome' to base url 'https://robot-testing-alpha.vercel.app/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-08T21:37:00.874114" elapsed="1.599354"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-08T21:37:02.473872" elapsed="0.339992"/>
+</kw>
+<kw name="Login to Food Page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:02.815275" level="INFO">Typing text 'user' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:02.814874" elapsed="0.131298"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:02.946428" level="INFO">Typing text 'password' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:02.946286" elapsed="0.048821"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[text()='Login']</arg>
+<arg>2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-08T21:37:02.995226" elapsed="0.013259"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:03.008700" level="INFO">Clicking element 'xpath=//button[text()='Login']'.</msg>
+<arg>xpath=//button[text()='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:03.008596" elapsed="0.097262"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T21:37:05.107759" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T21:37:03.106012" elapsed="2.002638"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${FOOD_URL}</arg>
+<arg>2s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2024-12-08T21:37:05.109513" elapsed="0.008806"/>
+</kw>
+<status status="PASS" start="2024-12-08T21:37:02.814427" elapsed="2.304116"/>
+</kw>
+<kw name="Verify Food Page Elements">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:05.131582" level="INFO">Current page contains element 'id=pizza'.</msg>
+<arg>id=pizza</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-12-08T21:37:05.119535" elapsed="0.012162"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:05.140535" level="INFO">Current page contains element 'id=burger'.</msg>
+<arg>id=burger</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-12-08T21:37:05.131902" elapsed="0.008701"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:05.147755" level="INFO">Current page contains element 'id=pasta'.</msg>
+<arg>id=pasta</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-12-08T21:37:05.140737" elapsed="0.007064"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:05.154084" level="INFO">Current page contains element 'id=addToCartButton'.</msg>
+<arg>id=addToCartButton</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-12-08T21:37:05.147905" elapsed="0.006215"/>
+</kw>
+<status status="PASS" start="2024-12-08T21:37:05.119083" elapsed="0.035107"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T21:37:06.156809" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T21:37:05.154316" elapsed="1.002884"/>
+</kw>
+<kw name="Select All Foods">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:06.159659" level="INFO">Clicking element 'id=pizza'.</msg>
+<arg>id=pizza</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:06.159093" elapsed="0.050303"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:06.209696" level="INFO">Clicking element 'id=burger'.</msg>
+<arg>id=burger</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:06.209544" elapsed="0.026485"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:06.236217" level="INFO">Clicking element 'id=pasta'.</msg>
+<arg>id=pasta</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:06.236124" elapsed="0.021194"/>
+</kw>
+<status status="PASS" start="2024-12-08T21:37:06.158095" elapsed="0.099280"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T21:37:07.258545" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T21:37:06.257473" elapsed="1.001523"/>
+</kw>
+<kw name="Click Add to Cart">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:07.261413" level="INFO">Clicking element 'id=addToCartButton'.</msg>
+<arg>id=addToCartButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:07.260857" elapsed="0.049153"/>
+</kw>
+<status status="PASS" start="2024-12-08T21:37:07.259915" elapsed="0.050203"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T21:37:08.311589" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T21:37:07.310331" elapsed="1.001732"/>
+</kw>
+<kw name="Verify Cart Popup">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=popup</arg>
+<arg>1s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-08T21:37:08.313907" elapsed="0.023676"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:08.355423" level="INFO">Element 'id=popupMessage' contains text 'Pizza'.</msg>
+<arg>id=popupMessage</arg>
+<arg>Pizza</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-12-08T21:37:08.337826" elapsed="0.017657"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:08.363292" level="INFO">Element 'id=popupMessage' contains text 'Burger'.</msg>
+<arg>id=popupMessage</arg>
+<arg>Burger</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-12-08T21:37:08.355596" elapsed="0.007738"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:08.370889" level="INFO">Element 'id=popupMessage' contains text 'Pasta'.</msg>
+<arg>id=popupMessage</arg>
+<arg>Pasta</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-12-08T21:37:08.363415" elapsed="0.007513"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-08T21:37:08.371085" level="INFO">Clicking element 'xpath=//button[text()='Continue']'.</msg>
+<arg>xpath=//button[text()='Continue']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-08T21:37:08.371001" elapsed="0.024873"/>
+</kw>
+<status status="PASS" start="2024-12-08T21:37:08.313161" elapsed="0.082829"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-08T21:37:09.397734" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-08T21:37:08.396092" elapsed="1.002083"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-08T21:37:09.399338" elapsed="0.096068"/>
+</kw>
+<status status="PASS" start="2024-12-08T21:37:00.873664" elapsed="8.621842"/>
+</test>
+<status status="PASS" start="2024-12-08T21:37:00.794135" elapsed="8.701713"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Food">Food</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
